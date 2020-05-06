@@ -3,9 +3,9 @@ import { QuestionService } from '../question.service';
 import { randomQuestion } from '../question';
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  selector: 'app-randomQuestion',
+  templateUrl: './randomQuestion.component.html',
+  styleUrls: ['./randomQuestion.component.css']
 })
 export class RandomQuestionComponent implements OnInit {
   questionDetails: randomQuestion;
@@ -15,6 +15,7 @@ export class RandomQuestionComponent implements OnInit {
   isLoading: boolean = true;
   remainingTime: any = 10;
   countDownVisibility: boolean = true;
+  inputAnswer: string;
 
   refresh(): void {
     window.location.reload();
@@ -23,6 +24,12 @@ export class RandomQuestionComponent implements OnInit {
   showAnswer() {
     this.questionDetails.hidden = false;
     this.countDownVisibility = false;
+  }
+
+  check(){
+    console.log("I have to implement it later");
+    //this.inputAnswer = document.getElementById('question').value;
+    console.log(this.inputAnswer)
   }
 
   ngOnInit(): void {
