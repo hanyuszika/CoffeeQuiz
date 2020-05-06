@@ -4,16 +4,18 @@
         <hr>
         <br>
         <div class="question center">
-            <p *ngIf="questionDetails.question">The question is: <b>{{questionDetails.question}}?</b></p>
-            <p *ngIf="questionDetails.category" class="italic capitalize">Under: <b>{{questionDetails.category}}</b>
+            <p *ngIf="questionDetails.question">The question is: <b class="italic capitalize">{{questionDetails.question}}?</b></p>
+            <p *ngIf="questionDetails.category">Under: <b class="italic capitalize">{{questionDetails.category}}</b>
                 category</p>
             <br>
             <input class="question-text" type="text" name="question" id="question">
             <br><br>
-            <div class="countdown">{{remainingTime}}</div>
+            <input type="button" class="btn btn-primary" value="New Question" (click)="refresh()">
+            <input type="button" class="btn btn-danger" value="Answer" (click)="showAnswer()">
             <br><br>
-            <input type="button" class="btn btn-primary" value="newQuestion" (click)="ngOnInit()">
-            <p *ngIf="!questionDetails.hidden" class="italic capitalize">The answer is: <b>{{questionDetails.answer}}</b></p>
+            <div class="countdown" *ngIf="countDownVisibility">{{remainingTime}} secundum until the answer is visible!</div>
+            
+            <p *ngIf="!questionDetails.hidden">The answer is: <b class="italic capitalize">{{questionDetails.answer}}</b></p>
         </div>
     </div>
 </div>
