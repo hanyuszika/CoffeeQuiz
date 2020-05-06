@@ -3,11 +3,11 @@ import { QuestionService } from '../question.service';
 import { Question } from '../question';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css']
 })
-export class ListComponent implements OnInit {
+export class CategoryComponent implements OnInit {
   questionDetails: Question;
 
   constructor(private questionService: QuestionService) { }
