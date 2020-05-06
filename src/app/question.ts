@@ -7,3 +7,8 @@ export class Question{
     id:number
     hidden: boolean = true
 }
+export class Category{
+    id: number
+    title: string
+    count: number
+}

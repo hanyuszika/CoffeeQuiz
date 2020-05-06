@@ -30,9 +30,7 @@ export class QuestionComponent implements OnInit {
             airdate: data[0].airdate,
             id: data[0].id,
             hidden: true,
-            
           }
-        //localStorage.setItem('question', JSON.stringify(data.results))
       },
       err => {
         return console.log(err);

@@ -8,7 +8,8 @@ import { Question } from '../question';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-  questionDetails: Question;
+  category: Question;
+  questionCategories: any;
 
   constructor(private questionService: QuestionService) { }
 
@@ -16,30 +17,16 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-    this.questionService.getQuestions().subscribe(
-      data => {
-        this.isLoading = false;
-        console.log(data[0]),
-          console.log("Question: " + data[0].question),
-          console.log("Category: " + data[0].category.title),
-          this.questionDetails = {
-            difficulty: data[0].value,
-            category: data[0].category.title,
-            question: data[0].question,
-            answer: data[0].answer,
-            airdate: data[0].airdate,
-            id: data[0].id,
-            hidden: true,
-            
-          }
-        //localStorage.setItem('question', JSON.stringify(data.results))
-      },
-      err => {
-        return console.log(err);
-      }
-    )
-  }, 1000);
+      this.questionService.getCategories().subscribe(
+        data => {
+          this.isLoading = false;
+          //console.log(data),
+          this.questionCategories = data;
+        },
+        err => {
+          return console.log(err);
+        }
+      )
+    }, 1000);
   }
-
-
 }
