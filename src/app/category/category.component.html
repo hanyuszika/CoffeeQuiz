@@ -1,16 +1,37 @@
 <div class="isLoading" *ngIf="!isLoading">
     <div class="container">
-        <h1 class="center">Let's Select the Category!</h1>
+        <h1 class="center">Let's Select a Category!</h1>
         <hr>
         <br>
         <div class="center">
-            <select class="selectpicke center" data-style="btn-primary" (change)="onChange($event.target.value)">
+            <select class="selectpicker center" data-style="btn-primary" (change)="onChange($event.target.value)">
                 <option value="" disabled selected hidden>Choose...</option>
                 <option *ngFor="let category of questionCategories" value={{category.id}} class="capitalize">
                     {{category.title}}</option>
             </select>
-            <div class="countdown">{{remainingTime}}</div>
         </div>
+        <br>
+        <ng-container *ngIf="categoryDetails">
+            <div class="container center">
+                    <p *ngIf="categoryDetails.question">The question is: <b
+                            class="italic capitalize">{{categoryDetails.question}}?</b>
+                    </p>
+                    <p *ngIf="categoryDetails.category">Under: <b class="italic capitalize">{{categoryDetails.category}}</b>
+                        category</p>
+                    <br>
+                    <input class="question-text" type="text" name="question" id="question">
+                    <br><br>
+                    <input type="button" class="btn btn-success" value="Check" (click)="check()">
+                    <input type="button" class="btn btn-primary" value="New Question" (click)="refresh()">
+                    <input type="button" class="btn btn-danger" value="Answer" (click)="showAnswer()">
+                    <br><br>
+                    <div class="countdown" *ngIf="countDownVisibility">{{remainingTime}} secundum until the answer is
+                        visible!</div>
+    
+                    <p *ngIf="!countDownVisibility">The answer is: <b
+                            class="italic capitalize">{{categoryDetails.answer}}</b></p>
+            </div>
+        </ng-container>
     </div>
 </div>
 <div class="isLoading" *ngIf="isLoading">

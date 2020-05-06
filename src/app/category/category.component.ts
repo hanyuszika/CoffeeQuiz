@@ -9,14 +9,29 @@ import { timeInterval } from 'rxjs/operators';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-  //randomNumber: number;
-  category: Category;
+  categoryDetails: Category;
   questionCategories: any;
-  remainingTime:any = 10;
+  remainingTime: any = 10;
+  countDownVisibility: boolean = true;
+  isLoading: boolean = true;
+  inputAnswer: string;
 
   constructor(private questionService: QuestionService) { }
 
-  isLoading: boolean = true;
+  check(){
+    console.log("I have to implement it later");
+    //this.inputAnswer = document.getElementById('question').value;
+    console.log(this.inputAnswer)
+  }
+
+  refresh(): void {
+    window.location.reload();
+  }
+
+  showAnswer() {
+    this.categoryDetails.hidden = false;
+    this.countDownVisibility = false;
+  }
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -31,31 +46,20 @@ export class CategoryComponent implements OnInit {
         }
       )
     }, 1000);
-
-    var x = setInterval(() => {
-        this.remainingTime = this.remainingTime - 1;
-        if (this.remainingTime <= 0) {
-          clearInterval(x);
-          this.remainingTime = "Time out";
-        }
-    }, 1000);
   }
-
 
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-
   onChange(typeValue) {
-
     //console.log(typeValue);
     this.isLoading = true;
     this.questionService.getCategory(typeValue).subscribe(
       data => {
         console.log(data);
         let index = this.getRandomInt(data.clues_count)
-        this.category = {
+        this.categoryDetails = {
           categoryid: data.id,
           category: data.title,
           count: data.clues_count,
@@ -63,15 +67,20 @@ export class CategoryComponent implements OnInit {
           question: data.clues[index].question,
           questionid: index,
           hidden: true
-
         }
-        console.log(this.category);
-        //this.randomNumber = Math.random(0, this.category.count);
+        console.log(this.categoryDetails);
         this.isLoading = false;
       },
       err => {
         return console.log(err);
       }
     )
+    var x = setInterval(() => {
+      this.remainingTime = this.remainingTime - 1;
+      if (this.remainingTime <= 0) {
+        this.countDownVisibility = false;
+        clearInterval(x);
+      }
+    }, 1000);
   }
 }
