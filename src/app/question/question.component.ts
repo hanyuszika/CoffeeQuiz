@@ -47,6 +47,7 @@ export class QuestionComponent implements OnInit {
         return console.log(err);
       }
     )
+    
     setTimeout(() => { this.questionDetails.hidden = false }, 10000);
     var x = setInterval(() => {
       this.remainingTime = this.remainingTime - 1;
