@@ -3,8 +3,8 @@
         <h1 class="center">Let's Select the Category!</h1>
         <hr>
         <br>
-        <div class="center" style="width:200px;">
-            <select class="selectpicke centerr" data-style="btn-primary" >
+        <div class="center">
+            <select class="selectpicke center" data-style="btn-primary" >
                 <option value="" disabled selected hidden>Choose...</option>
                 <option clas="center" *ngFor="let category of questionCategories" value={{category.id}} class="capitalize">
                     {{category.title}}</option>
