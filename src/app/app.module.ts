@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CategoryComponent } from './category/category.component';
 import { RandomQuestionComponent } from './randomQuestion/randomQuestion.component';
 import { LoadingComponent } from './loading/loading.component';
+import { QuestionComponent } from './question/question.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoadingComponent } from './loading/loading.component';
     NavbarComponent,
     CategoryComponent,
     RandomQuestionComponent,
-    LoadingComponent
+    LoadingComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
