@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CategoryComponent } from './category/category.component';
-import { QuestionComponent } from './question/question.component';
+import { RandomQuestionComponent } from './randomQuestion/randomQuestion.component';
 import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
@@ -15,7 +15,7 @@ import { LoadingComponent } from './loading/loading.component';
     AppComponent,
     NavbarComponent,
     CategoryComponent,
-    QuestionComponent,
+    RandomQuestionComponent,
     LoadingComponent
   ],
   imports: [

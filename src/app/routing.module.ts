@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { QuestionComponent} from './question/question.component';
+import { RandomQuestionComponent} from './randomQuestion/randomQuestion.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: QuestionComponent },
+  { path: 'home', component: RandomQuestionComponent },
 ];
 
 @NgModule({
