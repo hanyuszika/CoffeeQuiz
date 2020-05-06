@@ -12,6 +12,9 @@ export class QuestionService {
   getCategories() {
     return this.http.get<any>("http://jservice.io/api/categories?count=100&offset=100");
   }
+  getCategory(id){
+    return this.http.get<any>("http://jservice.io/api/category?id=" + id);
+  }
   getQuestions() {
     return this.http.get<any>("http://jservice.io/api/random")
   }

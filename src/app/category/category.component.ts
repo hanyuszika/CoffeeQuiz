@@ -29,4 +29,18 @@ export class CategoryComponent implements OnInit {
       )
     }, 1000);
   }
+
+  onChange(typeValue) {
+    console.log(typeValue);
+    this.isLoading = true;
+    this.questionService.getCategory(typeValue).subscribe(
+      data => {
+        console.log(data.title)
+        this.isLoading = false;
+        },
+      err => {
+        return console.log(err);
+      }
+    )
+  }
 }

@@ -4,7 +4,7 @@
         <hr>
         <br>
         <div class="center">
-            <select class="selectpicke center" data-style="btn-primary" >
+            <select class="selectpicke center" data-style="btn-primary" (change)="onChange($event.target.value)">
                 <option value="" disabled selected hidden>Choose...</option>
                 <option *ngFor="let category of questionCategories" value={{category.id}} class="capitalize">
                     {{category.title}}</option>
