@@ -6,7 +6,7 @@
         <div class="center">
             <select class="selectpicke center" data-style="btn-primary" >
                 <option value="" disabled selected hidden>Choose...</option>
-                <option clas="center" *ngFor="let category of questionCategories" value={{category.id}} class="capitalize">
+                <option *ngFor="let category of questionCategories" value={{category.id}} class="capitalize">
                     {{category.title}}</option>
             </select>
         </div>
