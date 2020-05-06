@@ -13,7 +13,7 @@
         <br>
         <ng-container *ngIf="categoryDetails">
             <div class="container center">
-                    <p *ngIf="categoryDetails.question">The question is: <b
+                    <p *ngIf='categoryDetails.question && categoryDetails.question != ""'>The question is: <b
                             class="italic capitalize">{{categoryDetails.question}}?</b>
                     </p>
                     <p *ngIf="categoryDetails.category">Under: <b class="italic capitalize">{{categoryDetails.category}}</b>
