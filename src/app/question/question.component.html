@@ -10,7 +10,10 @@
             <br>
             <input class="question-text" type="text" name="question" id="question">
             <br><br>
-            <p *ngIf="questionDetails.category" class="italic capitalize">The answer is: <b>{{questionDetails.answer}}</b></p>
+            <div class="countdown">{{remainingTime}}</div>
+            <br><br>
+            <input type="button" class="btn btn-primary" value="newQuestion" (click)="ngOnInit()">
+            <p *ngIf="!questionDetails.hidden" class="italic capitalize">The answer is: <b>{{questionDetails.answer}}</b></p>
         </div>
     </div>
 </div>
