@@ -25,7 +25,7 @@
                     <input type="button" class="btn btn-primary" value="New Question" (click)="refresh()">
                     <input type="button" class="btn btn-danger" value="Answer" (click)="showAnswer()">
                     <br><br>
-                    <div class="countdown" *ngIf="countDownVisibility">{{remainingTime}} secundum until the answer is
+                    <div class="countdown" *ngIf="countDownVisibility">Only {{remainingTime}} s until the answer is
                         visible!</div>
     
                     <p *ngIf="!countDownVisibility">The answer is: <b

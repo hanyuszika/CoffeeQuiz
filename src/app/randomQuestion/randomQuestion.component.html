@@ -4,7 +4,7 @@
         <hr>
         <br>
         <div class="question center">
-            <p *ngIf="questionDetails.question">The question is: <b class="italic capitalize">{{questionDetails.question}}?</b></p>
+            <p *ngIf='questionDetails.question && questionDetails.question != ""'>The question is: <b class="italic capitalize">{{questionDetails.question}}?</b></p>
             <p *ngIf="questionDetails.category">Under: <b class="italic capitalize">{{questionDetails.category}}</b>
                 category</p>
             <br>
@@ -14,7 +14,7 @@
             <input type="button" class="btn btn-primary" value="New Question" (click)="refresh()">
             <input type="button" class="btn btn-danger" value="Answer" (click)="showAnswer()">
             <br><br>
-            <div class="countdown" *ngIf="countDownVisibility">{{remainingTime}} secundum until the answer is visible!</div>
+            <div class="countdown" *ngIf="countDownVisibility">Only {{remainingTime}} s until the answer is visible!</div>
             
             <p *ngIf="!questionDetails.hidden">The answer is: <b class="italic capitalize">{{questionDetails.answer}}</b></p>
         </div>
