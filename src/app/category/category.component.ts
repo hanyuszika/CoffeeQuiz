@@ -20,8 +20,6 @@ export class CategoryComponent implements OnInit {
 
   check(){
     console.log("I have to implement it later");
-    //this.inputAnswer = document.getElementById('question').value;
-    console.log(this.inputAnswer)
   }
 
   refresh(): void {

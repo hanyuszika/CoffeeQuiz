@@ -15,7 +15,7 @@ export class RandomQuestionComponent implements OnInit {
   isLoading: boolean = true;
   remainingTime: any = 10;
   countDownVisibility: boolean = true;
-  inputAnswer: string;
+  //inputAnswer: string;
 
   refresh(): void {
     window.location.reload();
@@ -28,8 +28,7 @@ export class RandomQuestionComponent implements OnInit {
 
   check(){
     console.log("I have to implement it later");
-    //this.inputAnswer = document.getElementById('question').value;
-    console.log(this.inputAnswer)
+    //console.log(this.inputAnswer)
   }
 
   ngOnInit(): void {
