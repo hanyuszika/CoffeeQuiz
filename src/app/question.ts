@@ -1,4 +1,4 @@
-export class Question{ 
+export class randomQuestion{ 
     difficulty: number
     category: string
     question: string
@@ -8,7 +8,11 @@ export class Question{
     hidden: boolean = true
 }
 export class Category{
-    id: number
-    title: string
+    categoryid: number
+    category: string
     count: number
+    question: string
+    answer: string
+    questionid: number
+    hidden: boolean = true
 }
